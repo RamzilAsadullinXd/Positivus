@@ -1,0 +1,21 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+@use './blocks/button';
+@use './blocks/grid';
+@use './blocks/burger-button';
+@use './blocks/header';
+@use './blocks/section';
+@use './blocks/hero';
+@use './blocks/puddle-bg';
+@use './blocks/services';
+@use './blocks/servise-card';
+@use './blocks/banner';
+@use './blocks/studies';
+@use './blocks/process';
+@use './blocks/team';
+@use './blocks/team-card';
+@use './blocks/footer';

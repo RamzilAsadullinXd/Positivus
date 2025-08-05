@@ -1,0 +1,100 @@
+@use '../helpers' as *;
+
+.footer {
+    background-color: var(--color-dark);
+    padding-block: rem(50) rem(20);
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: fluid(100, 50);
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        row-gap: rem(20);
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    &__menu{
+        &-list {
+            display: flex;
+            align-items: center;
+            column-gap: rem(40);
+
+            @include desktop {
+                column-gap: rem(20);
+            }
+
+            @include tablet {
+                column-gap: rem(10);
+            }
+
+            @include mobile {
+                flex-direction: column;
+                row-gap: 1rem;
+            }
+        }
+
+        &-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            height: rem(48);
+            font-size: rem(20);
+            color: var(--color-light);
+            
+            @include hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                translate: -50%;
+                width: 0;
+                height: rem(2);
+                background-color: var(--color-light);
+                transition-duration: inherit;
+            }
+
+            @include tablet {
+                font-size: rem(16);
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        column-gap: rem(20);    
+
+        &-link {
+            @include hover {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        column-gap: rem(40);
+        color: var(--color-light);
+
+        @include mobile {
+            justify-content: space-between;
+        }
+    }
+
+    &__privacy {
+        text-decoration:underline;
+    }
+}

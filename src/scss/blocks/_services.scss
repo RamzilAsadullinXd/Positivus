@@ -1,0 +1,9 @@
+@use '../helpers' as *;
+
+.services {
+    &__list {
+        &:not(:last-child) {
+            margin-bottom: fluid(100, 70);
+        }
+    }
+}

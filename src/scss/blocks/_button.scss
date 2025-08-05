@@ -1,0 +1,28 @@
+@use '../helpers' as *;
+
+.button {
+    @include flex-center(true);
+
+    height: var(--button-height);
+    padding-inline: rem(35);
+    font-size: rem(20);
+    color: var(--color-light);
+    background-color: var(--color-dark);
+    border: var(--border);
+    border-radius: var(--border-radius);
+
+    @include hover {
+        color: var(--color-dark);
+        background-color: var(--color-accent);
+    }
+
+    &--transparent {
+        color: var(--color-dark);
+        background-color: var(--color-light);
+
+        @include hover {
+            color: var(--color-light);
+            background-color: var(--color-dark);
+        }
+    }
+}

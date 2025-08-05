@@ -1,0 +1,124 @@
+@use '../helpers' as *;
+
+.header {
+    padding-top: rem(60);
+
+    @include desktop {
+        padding-top: rem(30);
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    &__logo {
+        width: fluid(219, 144);
+        height: fluid(36, 24);
+    }
+
+    &__overlay {
+        display: flex;
+        align-items: center;
+        column-gap: rem(40);
+        margin-top: rem(14);
+        z-index: 2;
+
+        @include desktop {
+            column-gap: rem(20);
+        }
+
+        @include tablet {
+            column-gap: rem(10);
+        }
+
+        @include mobile {
+            overflow-y: auto;
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: var(--color-light);
+            margin-top: 0;
+            row-gap: rem(20);
+            transition-duration: var(--transition-duration);
+
+            &:not(.is-active) {
+                @include hide;
+
+                translate: 100%;
+            }
+        }
+    }
+
+    &__menu{
+        &-list {
+            display: flex;
+            align-items: center;
+            column-gap: rem(40);
+
+            @include desktop {
+                column-gap: rem(20);
+            }
+
+            @include tablet {
+                column-gap: rem(10);
+            }
+
+            @include mobile {
+                flex-direction: column;
+                row-gap: 1rem;
+            }
+        }
+
+        &-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            height: rem(48);
+            font-size: rem(20);
+            
+            @include hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                translate: -50%;
+                width: 0;
+                height: rem(2);
+                background-color: currentColor;
+                transition-duration: inherit;
+            }
+
+            @include tablet {
+                font-size: rem(16);
+            }
+        }
+    }
+
+    &__button {
+        @include desktop {
+            height: rem(50);
+            padding-inline: rem(14);
+
+        }
+
+        @include tablet {
+            height: rem(45);
+            padding-inline: rem(10);
+            font-size: rem(18);
+        }
+    }
+
+    &__burger-button {
+        margin-top: rem(7);
+    }
+}
